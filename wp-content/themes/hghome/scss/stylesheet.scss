@@ -65,27 +65,16 @@ html {
   background-color: #fff;
 }
 
-.wrapper {
-  max-width: 1200px;
-  margin: 1rem auto;
-}
-
-.body-main {
-  /* padding: 0 1rem; */
+main {
   /* counteract navbar fixed  */
   padding-top: calc(40px + 4rem) !important;
+
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
-@media (min-width: 768px) {
-  .body-main {
-    /*padding: 0 4rem;*/
-    /*max-width: 1200px;*/
-  }
-}
-
-.body-main:after {
+main:after {
   position: absolute;
   content: "";
   top: -30vw;
@@ -112,7 +101,6 @@ h1.page-title {
 
 /*page sub-headings*/
 h2 {
-  font-size: 3rem;
   font-weight: 700;
 }
 
@@ -180,10 +168,6 @@ img {
 .btn-blue {
   color: $white !important;
   background-color: $blue;
-}
-
-.text-blue {
-  color: $blue !important;
 }
 
 .circle {
