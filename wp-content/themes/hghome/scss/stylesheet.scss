@@ -1,6 +1,6 @@
 $blue-dark: #00187a;
 $blue: #0066ff;
-$peach: #ffdbbf;
+$peach: #faebd7;
 $yellow: #ffd100;
 $dark: #070707;
 $grey-3: #222226;
@@ -37,17 +37,24 @@ $colours: (
 }
 
 $positions: (
-  "static": "static",
-  "relative": "relative",
-  "absolute": "absolute",
-  "fixed": "fixed",
-  "sticky": "sticky"
+  "static": static,
+  "relative": relative,
+  "absolute": absolute,
+  "fixed": fixed,
+  "sticky": sticky
 );
 
 @each $i in $positions {
   .position-#{nth($i, 1)} {
     position: nth($i, 2) !important;
   }
+}
+
+.pt-5 {
+  padding-top: 3rem !important;
+}
+.pt-6 {
+  padding-top: 6rem !important;
 }
 
 /* GENERAL */
@@ -62,7 +69,6 @@ html {
   margin: 0 !important;
   bottom: 0 !important;
   padding: 0 !important;
-  background-color: #fff;
 }
 
 main {
@@ -79,24 +85,19 @@ main:after {
   content: "";
   top: -30vw;
   left: -40vw;
-  width: 80vw;
+  width: 120vw;
   min-width: 800px;
-  height: 80vw;
+  height: 120vw;
   min-height: 800px;
   border-radius: 100%;
-  background-color: $grey-1;
+  background-color: $peach;
   z-index: -1;
 }
 
 /*MAIN ELEMENTS*/
 /*page heading*/
 h1 {
-  color: $blue;
   font-weight: 700;
-}
-
-h1.page-title {
-  padding: 3rem 1.5rem;
 }
 
 /*page sub-headings*/
@@ -130,10 +131,6 @@ h6 {
   font-weight: 700;
 }
 
-small {
-  display: block;
-}
-
 p,
 a {
   line-height: 1.5;
@@ -151,10 +148,19 @@ a:active {
   color: $blue-dark;
 }
 
+small {
+  display: block;
+}
+
 button.btn {
   border-radius: 500px;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
+}
+
+div.br {
+  padding: 0.5rem;
+  display: block;
 }
 
 img {
@@ -179,45 +185,13 @@ img {
   background-color: $grey-1;
 }
 
-/*about section*/
-section.about {
-  width: 100%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  text-align: left;
-}
-
-@media (min-width: 1200px) {
-  section.about.container {
-    max-width: 960px;
-  }
-}
-
-.about-img {
-  width: 20%;
-  padding-top: 20%;
-  margin-bottom: 2rem;
-}
-
-.profile-img {
-  width: 100%;
-  height: 100%;
-  margin-top: -100%;
-  overflow: hidden;
-}
-
-.about-description {
-  margin-top: 15px;
-}
-
-.about-quote {
-  color: $grey-2;
+/* front-page.php */
+h1.about-title {
+  font-size: 3rem;
 }
 
 .about-signature {
   max-width: 100px !important;
-  margin-top: 15px;
-  margin-bottom: 15px;
 
   /*to offset actual margin within image*/
   margin-left: -15px;
@@ -272,35 +246,6 @@ article.content a:hover ~ figure > img {
 article.content a ~ figure > img {
   filter: grayscale(0.9);
   transition: 0.2s;
-}
-
-/*SERVICES*/
-section.services {
-  color: $white;
-  background-color: $dark;
-  position: relative;
-  overflow: hidden;
-  z-index: 5;
-}
-
-section.services * {
-  z-index: 15;
-}
-
-section.services:after {
-  position: absolute;
-  content: "";
-  right: 80vw;
-  top: -100vh;
-  left: -80vw;
-  bottom: -100vh;
-  border-radius: 100%;
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-  transform: rotate(30deg);
-  background: $grey-3;
-  z-index: 10;
 }
 
 /*404 page*/

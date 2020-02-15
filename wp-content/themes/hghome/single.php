@@ -15,7 +15,7 @@ if (have_posts()) {
 
 		<article class="container-fluid single">
 
-			<div class="page-title container my-4 py-4">
+			<div class="container my-4 py-4 px-2">
 				<h5>
 				<?php
 					if($company_name) {
