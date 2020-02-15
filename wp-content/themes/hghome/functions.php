@@ -22,10 +22,6 @@ function hghome_script_enqueue() {
 	//wp_enqueue_script('bootstrap-jquery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', array( 'jquery' ), '3.1.1', true);
 	wp_enqueue_script('bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js', array(), '4.1.0', true);
 
-	//font awesome files || https://fontawesome.com/
-	wp_enqueue_style('font-awesome-brands', 'https://use.fontawesome.com/releases/v5.8.1/css/brands.css', array(), '5.8.1', 'all');
-	wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css', array(), '5.8.1', 'all');
-
 	//google fonts queue || https://fonts.google.com
 	wp_enqueue_style('google-font-montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,700', array(), '5.8.1', 'all');
 
