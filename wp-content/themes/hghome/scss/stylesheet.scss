@@ -2,15 +2,53 @@ $blue-dark: #00187a;
 $blue: #0066ff;
 $peach: #ffdbbf;
 $yellow: #ffd100;
-
 $dark: #070707;
 $grey-3: #222226;
 $grey-2: #50505a;
 $grey-1: #e5e9ea;
 $light: #f9f9f9;
-
 $white: #fff;
 $black: #000;
+
+$colours: (
+  "blue-dark": #00187a,
+  "blue": #0066ff,
+  "peach": #ffdbbf,
+  "yellow": #ffd100,
+  "dark": #070707,
+  "grey-3": #222226,
+  "grey-2": #50505a,
+  "grey-1": #e5e9ea,
+  "light": #f9f9f9,
+  "white": #fff,
+  "black": #000
+);
+
+@each $i in $colours {
+  .bg-#{nth($i, 1)} {
+    background-color: nth($i, 2) !important;
+  }
+  .text-#{nth($i, 1)} {
+    color: nth($i, 2) !important;
+  }
+  .fill-#{nth($i, 1)} {
+    fill: nth($i, 2) !important;
+  }
+}
+
+$positions: (
+  "static": "static",
+  "relative": "relative",
+  "absolute": "absolute",
+  "fixed": "fixed",
+  "sticky": "sticky"
+);
+
+@each $i in $positions {
+  .position-#{nth($i, 1)} {
+    position: nth($i, 2) !important;
+  }
+}
 
 /* GENERAL */
 * {
@@ -25,15 +63,6 @@ html {
   bottom: 0 !important;
   padding: 0 !important;
   background-color: #fff;
-}
-
-body {
-  background-color: $white;
-}
-
-html,
-body {
-  color: $dark !important;
 }
 
 .wrapper {

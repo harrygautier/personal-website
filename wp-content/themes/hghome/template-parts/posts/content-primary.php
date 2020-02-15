@@ -2,7 +2,7 @@
 <article class="col-12 col-md-6 content content-primary py-md-4 p-relative">
 
 	<a href="<?php the_permalink(); ?>" class="p-absolute"></a>
-	
+
 	<figure class="p-relative overflow-hidden p-0 px-xl-4 pt-4">
 		<img src="<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url(); }?>" class="p-absolute">
 	</figure>
@@ -15,7 +15,3 @@
 	</div>
 
 </article>
-
-
-
-	

@@ -1,1 +1,0 @@
-<!--this is to be used for blog page only-->

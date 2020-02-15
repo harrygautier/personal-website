@@ -20,7 +20,7 @@
 		while ( $arr_posts->have_posts() ) {
 			$arr_posts->the_post();
 
-			get_template_part('content', 'secondary');
+			get_template_part('template-parts/posts/content', 'secondary');
 		}
 	}
 

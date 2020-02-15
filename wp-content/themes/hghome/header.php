@@ -7,7 +7,7 @@
 
 		<title><?php wp_title(''); ?></title>
 		<?php wp_head(); //used to add functions plugin in header?>
-		
+
 		<!-- Facebook Pixel Code -->
 		<script>
 			!function(f,b,e,v,n,t,s)
@@ -25,7 +25,7 @@
 			src="https://www.facebook.com/tr?id=399210314146320&ev=PageView&noscript=1"
 		/></noscript>
 		<!-- End Facebook Pixel Code -->
-		
+
 		<!-- Google Analytics - Global Site Tag -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89699287-1"></script>
 		<script>
@@ -37,17 +37,17 @@
 		</script>
 		<!-- End Google Analytics - Global Site Tag -->
 
-		
+
 	</head>
 
 	<?php
-	
+
 
 		if ( is_front_page()/*or is_home()*/ ) {
-			$page_classes = array('home-class', 'another-class');
+			$page_classes = array('home-class', 'another-class', 'bg-white', 'text-dark');
 		}
 		else {
-			$page_classes = array('not-home-class');
+			$page_classes = array('not-home-class', 'bg-white', 'text-dark');
 		}
 
 	?>
@@ -94,7 +94,7 @@
 					</div>
 				</div>
 			</nav>
-			
+
 		</header>
 
 		<main>
@@ -104,5 +104,3 @@
 			<!-- var_dump(get_custom_header()); -->
 
 			<!-- <img src="<?php //header_image(); ?>" height="<?php //echo get_custom_header()->height; ?>" width="<?php //echo get_custom_header()->width; ?>" alt=""> -->
-			
-		

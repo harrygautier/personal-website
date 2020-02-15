@@ -90,7 +90,7 @@ if (have_posts()) {
 				</div>
 			</div>
 
-				<?php include_once 'component-more-work.php'; ?>
+				<?php get_template_part("template-parts/more-work"); ?>
 
   	</section>
 
