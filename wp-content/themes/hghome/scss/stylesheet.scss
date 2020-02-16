@@ -1,60 +1,9 @@
-$blue-dark: #00187a;
-$blue: #0066ff;
-$peach: #faebd7;
-$yellow: #ffd100;
-$dark: #070707;
-$grey-3: #222226;
-$grey-2: #50505a;
-$grey-1: #e5e9ea;
-$light: #f9f9f9;
-$white: #fff;
-$black: #000;
+@import "variables";
+@import "functions";
+@import "utilities";
 
-$colours: (
-  "blue-dark": #00187a,
-  "blue": #0066ff,
-  "peach": #ffdbbf,
-  "yellow": #ffd100,
-  "dark": #070707,
-  "grey-3": #222226,
-  "grey-2": #50505a,
-  "grey-1": #e5e9ea,
-  "light": #f9f9f9,
-  "white": #fff,
-  "black": #000
-);
-
-@each $i in $colours {
-  .bg-#{nth($i, 1)} {
-    background-color: nth($i, 2) !important;
-  }
-  .text-#{nth($i, 1)} {
-    color: nth($i, 2) !important;
-  }
-  .fill-#{nth($i, 1)} {
-    fill: nth($i, 2) !important;
-  }
-}
-
-$positions: (
-  "static": static,
-  "relative": relative,
-  "absolute": absolute,
-  "fixed": fixed,
-  "sticky": sticky
-);
-
-@each $i in $positions {
-  .position-#{nth($i, 1)} {
-    position: nth($i, 2) !important;
-  }
-}
-
-.pt-5 {
-  padding-top: 3rem !important;
-}
-.pt-6 {
-  padding-top: 6rem !important;
+.overflow-hidden {
+  overflow: hidden;
 }
 
 /* GENERAL */
@@ -134,32 +83,10 @@ h6 {
 p,
 a {
   line-height: 1.5;
-}
-
-a,
-a:hover,
-a:active {
   text-decoration: none;
-  color: $blue;
-}
-
-a:hover,
-a:active {
-  color: $blue-dark;
 }
 
 small {
-  display: block;
-}
-
-button.btn {
-  border-radius: 500px;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-}
-
-div.br {
-  padding: 0.5rem;
   display: block;
 }
 
@@ -169,20 +96,6 @@ img {
   height: auto;
   width: auto;
   max-width: 100%;
-}
-
-.btn-blue {
-  color: $white !important;
-  background-color: $blue;
-}
-
-.circle {
-  border-radius: 50% !important;
-}
-
-/*colours*/
-.light-grey {
-  background-color: $grey-1;
 }
 
 /* front-page.php */
@@ -248,16 +161,7 @@ article.content a ~ figure > img {
   transition: 0.2s;
 }
 
-/*404 page*/
-.section-404 {
-  margin-bottom: 10px;
-}
-
 /*SINGLE.PHP*/
-article.single h1 {
-  color: $dark;
-}
-
 article.single ul {
   list-style-type: none;
 }
@@ -293,7 +197,48 @@ div.wp-block-group {
   }
 }
 
-/*navbar*/
+/*FOOTER*/
+
+footer {
+  min-height: 80vh;
+  z-index: 5;
+}
+
+footer * {
+  z-index: 15;
+  line-height: 2;
+}
+
+footer:after {
+  position: absolute;
+  content: "";
+  right: -50vw;
+  top: -100vh;
+  left: 50vw;
+  bottom: -100vh;
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  background: $grey-3;
+  z-index: 10;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+// @media (min-width: 576px) { ... }
+
+/* Medium devices (tablets, 768px and up) */
+// @media (min-width: 768px) { ... }
+
+/* Large devices (desktops, 992px and up) */
+// @media (min-width: 992px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up) */
+// @media (min-width: 1200px) { ... }
+
 nav {
   padding: 1rem !important;
   background: rgba(255, 255, 255, 1);
@@ -451,123 +396,4 @@ li.nav-item-contact a:hover:after {
   -webkit-transition: ease all 0.2s;
   -o-transition: ease all 0.2s;
   transition: ease all 0.2s;
-}
-
-/*FOOTER*/
-
-footer {
-  color: $white !important;
-  background-color: $dark;
-
-  min-height: 80vh;
-
-  position: relative;
-  overflow: hidden;
-  z-index: 5;
-}
-
-footer * {
-  z-index: 15;
-  line-height: 2;
-}
-
-footer:after {
-  position: absolute;
-  content: "";
-  right: -50vw;
-  top: -100vh;
-  left: 50vw;
-  bottom: -100vh;
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-  transform: rotate(30deg);
-  background: $grey-3;
-  z-index: 10;
-}
-
-.footer-contents a,
-.footer-contents a:hover,
-.footer-contents a:active {
-  color: $white !important;
-}
-
-footer .social-icons svg {
-  fill: $white;
-  margin: 0 0.5rem;
-}
-
-/*recaptcha*/
-.grecaptcha-badge {
-  visibility: hidden;
-}
-
-/* Extra small devices (portrait phones, less than 576px) */
-/* No media query for `xs` since this is the default in Bootstrap */
-
-/* Small devices (landscape phones, 576px and up) */
-// @media (min-width: 576px) { ... }
-
-/* Medium devices (tablets, 768px and up) */
-// @media (min-width: 768px) { ... }
-
-/* Large devices (desktops, 992px and up) */
-// @media (min-width: 992px) { ... }
-
-/* Extra large devices (large desktops, 1200px and up) */
-// @media (min-width: 1200px) { ... }
-
-/*ANIMATIONS*/
-.animate {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.animate-up:hover {
-  -webkit-transform: translateY(-0.25rem);
-  -ms-transform: translateY(-0.25rem);
-  -o-transform: translateY(-0.25rem);
-  transform: translateY(-0.25rem);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.animate-right:hover,
-.animate-left:hover {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transform: translateY(-0.25rem);
-  -ms-transform: translateY(-0.25rem);
-  -o-transform: translateY(-0.25rem);
-  transform: translateY(-0.25rem);
-}
-
-@media (min-width: 992px) {
-  .animate-left:hover {
-    -webkit-transform: translateX(-0.25rem);
-    -ms-transform: translateX(-0.25rem);
-    -o-transform: translateX(-0.25rem);
-    transform: translateX(-0.25rem);
-    -webkit-transition: ease all 0.2s;
-    -o-transition: ease all 0.2s;
-    transition: ease all 0.2s;
-  }
-
-  .animate-right:hover {
-    -webkit-transform: translateX(0.25rem);
-    -ms-transform: translateX(0.25rem);
-    -o-transform: translateX(0.25rem);
-    transform: translateX(0.25rem);
-    -webkit-transition: ease all 0.2s;
-    -o-transition: ease all 0.2s;
-    transition: ease all 0.2s;
-  }
 }
