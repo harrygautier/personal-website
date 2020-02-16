@@ -1,30 +1,40 @@
-<div class="row mx-auto my-4 py-4">
+<section class="more-work mt-6">
+	<div class="row">
+		<div class="col-12 col-md-1"></div>
+		<div class="col-12 col-md-8 my-4 mx-4">
+			<h2 class="mb-0">More Selected Work</h2>
+			<p class="text-bold">Suggested</p>
+		</div>
+	</div>
 
-	<?php
+	<div class="row mx-auto py-4">
 
-	$currentID = get_the_ID();
+		<?php
 
-	$args = array(
-		'post_type' => 'post',
-		'post_status' => 'publish',
-		'orderby' => 'rand',
-		'order' => 'ASC',
-		'posts_per_page' => 2,
-		'post__not_in' => array($currentID),
+		$currentID = get_the_ID();
 
-	);
-	$arr_posts = new WP_Query( $args );
+		$args = array(
+			'post_type' => 'post',
+			'post_status' => 'publish',
+			'orderby' => 'rand',
+			'order' => 'ASC',
+			'posts_per_page' => 2,
+			'post__not_in' => array($currentID),
 
-	if ( $arr_posts->have_posts() ) {
+		);
+		$arr_posts = new WP_Query( $args );
 
-		while ( $arr_posts->have_posts() ) {
-			$arr_posts->the_post();
+		if ( $arr_posts->have_posts() ) {
 
-			get_template_part('template-parts/posts/content', 'secondary');
+			while ( $arr_posts->have_posts() ) {
+				$arr_posts->the_post();
+
+				get_template_part('template-parts/posts/content', 'secondary');
+			}
 		}
-	}
 
-	wp_reset_postdata();
-	?>
+		wp_reset_postdata();
+		?>
 
-</div>
+	</div>
+</section>

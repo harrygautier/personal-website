@@ -26,7 +26,7 @@ if (have_posts()) {
 			</div>
 
 			<figure class="p-relative overflow-hidden p-0 px-xl-4 pt-4 m-4">
-				<img src="<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url(); }?>" class="p-absolute">
+				<img src="<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url(); }?>" class="position-block">
 			</figure>
 			<br>
 			<br>
@@ -37,7 +37,7 @@ if (have_posts()) {
 			//only shows brief and tags if brief exists
 			if($brief) { ?>
 			<div class="intro row container mx-auto">
-				<h3 class="col-12">Brief</h3>
+				<h2 class="col-12">Brief</h2>
 				<div class="excerpt col-12 col-md-9">
 					<p> <?php	echo $brief; ?>
 					</p>
@@ -81,18 +81,9 @@ if (have_posts()) {
 		</article>
 
 
-  	<section class="more-work mt-4">
-			<div class="row">
-				<div class="col-12 col-md-1"></div>
-  			<div class="col-12 col-md-8 my-4 mx-4">
-					<h3 class="mb-0">More Selected Work</h3>
-					<p class="text-bold">Suggested</p>
-				</div>
-			</div>
 
-				<?php get_template_part("template-parts/more-work"); ?>
 
-  	</section>
+		<?php get_template_part("template-parts/component", "more-work"); ?>
 
 
 

@@ -4,7 +4,6 @@
 <section class="about">
   <div class="container my-1 text-left">
 
-
     <h1 class="about-title text-blue pt-6">Hi, I'm Harry Gautier.</h1>
   	<p class="about-description mt-3">I'm a freelance designer specialising in <strong>brand identity</strong> &amp; <strong>web design</strong>. Based in Chester, I work with clients directly to help create a stronger looking brand and robust online presence.</p>
   	<small class="about-quote text-grey-2">Art is created. Design is crafted.</small>
@@ -40,6 +39,8 @@
 		?>
 </section>
 
+
+<?php get_template_part("template-parts/component", "my-skills"); ?>
 
 
 <!-- gets the content for this page -->
