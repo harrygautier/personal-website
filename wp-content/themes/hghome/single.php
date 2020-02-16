@@ -36,36 +36,53 @@ if (have_posts()) {
 			<?php
 			//only shows brief and tags if brief exists
 			if($brief) { ?>
-			<div class="intro row container mx-auto">
-				<h2 class="col-12">Brief</h2>
-				<div class="excerpt col-12 col-md-9">
-					<p> <?php	echo $brief; ?>
-					</p>
-				</div>
-				<div class="tags col-12 col-md-3">
-					<?php
-					$posttags = get_the_tags();
-					if ($posttags) {
-						echo '<ul class="p-0 list-unstyled">';
-						foreach($posttags as $tag) {
-							echo '<li><h4>' .$tag->name. '</h4></li>';
-						}
-						echo '</ul>';
-					}
-					?>
+			<div class="intro container mx-auto mb-5">
 
-					<?php
-					if ($website_link) {
-					?>
-					<div class="website-link">
-						<a target="_blank" href="<?php echo $website_link; ?>">Visit Website</a>
+				<div class="row mb-2">
+
+					<div class="col-12 col-md-3"></div>
+					<div class="col-12 col-md-9">
+						<h2 class="mb-0">Brief</h2>
 					</div>
-					<?php } ?>
+
 				</div>
+
+				<div class="row">
+
+					<div class="col-12 col-md-3">
+						<div class="tags">
+							<?php
+							$posttags = get_the_tags();
+							if ($posttags) {
+								echo '<ul class="p-0 list-unstyled">';
+								foreach($posttags as $tag) {
+									echo '<li><h4>' .$tag->name. '</h4></li>';
+								}
+								echo '</ul>';
+							}
+							?>
+
+							<?php
+							if ($website_link) {
+							?>
+							<div class="website-link">
+								<a target="_blank" href="<?php echo $website_link; ?>">Visit Website</a>
+							</div>
+							<?php } ?>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-9">
+						<div class="excerpt">
+							<p> <?php	echo $brief; ?>
+							</p>
+						</div>
+					</div>
+
+				</div>
+
+
 			</div>
-			<br>
-			<br>
-			<br>
 			<?php } ?>
 
 
