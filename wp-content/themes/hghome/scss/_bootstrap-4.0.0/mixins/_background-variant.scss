@@ -24,10 +24,10 @@
 
 //hghome addition
 @mixin fill-svg-variant($parent, $color) {
-  #{$parent} svg {
+  #{$parent} {
     fill: $color !important;
   }
-  a#{$parent} svg {
+  a svg#{$parent} {
     @include hover-focus {
       fill: darken($color, 10%) !important;
     }
