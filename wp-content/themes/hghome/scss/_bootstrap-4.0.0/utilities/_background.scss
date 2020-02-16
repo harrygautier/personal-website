@@ -17,3 +17,10 @@
 .bg-transparent {
   background-color: transparent !important;
 }
+
+
+
+// hghome addition
+@each $color, $value in $theme-colors {
+  @include fill-svg-variant(".fill-#{$color}", $value);
+}

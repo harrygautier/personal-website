@@ -29,7 +29,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #070707;
   text-align: left;
   background-color: #fff; }
 
@@ -107,12 +107,12 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: #0066ff;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #0056b3;
+    color: #0047b3;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -153,7 +153,7 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #6c757d;
+  color: #181819;
   text-align: left;
   caption-side: bottom; }
 
