@@ -11,9 +11,9 @@ $blue: #0066ff !default;
 $peach: #faebd7 !default;
 $yellow: #ffd100 !default;
 $dark: #070707 !default;
-$grey-3: #222226 !default;
+$grey-3: #181819 !default;
 $grey-2: #50505a !default;
-$grey-1: #e5e9ea !default;
+$grey-1: #c2c5c6 !default;
 $light: #f9f9f9 !default;
 $white: #fff !default;
 $black: #000 !default;
@@ -73,6 +73,11 @@ $sizes: map-merge(
   ),
   $sizes
 );
+
+//
+// sets variable of the gutter width for elements such as .col and .container
+//
+$grid-gutter-width: 30px;
 
 // Z-index master list
 //

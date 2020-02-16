@@ -1,3 +1,5 @@
+@import "_bootstrap-4.0.0/bootstrap";
+
 @import "variables";
 @import "functions";
 @import "utilities";
@@ -39,7 +41,7 @@ main:after {
   height: 120vw;
   min-height: 800px;
   border-radius: 100%;
-  background-color: $peach;
+  background-color: $grey-3;
   z-index: -1;
 }
 
@@ -86,6 +88,15 @@ a {
   text-decoration: none;
 }
 
+a {
+  color: $white !important;
+}
+
+a:hover,
+a:active {
+  color: $grey-2 !important;
+}
+
 small {
   display: block;
 }
@@ -98,9 +109,16 @@ img {
   max-width: 100%;
 }
 
-/* front-page.php */
-h1.about-title {
-  font-size: 3rem;
+section {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+//
+// front-page.php
+//
+h1.hero-title {
+  font-size: 4rem;
 }
 
 .about-signature {
@@ -111,7 +129,14 @@ h1.about-title {
   margin-right: -15px;
 }
 
-/*content-primary.php & content-secondary.php*/
+.about-image {
+  filter: grayscale(1);
+  transition: 0.2s;
+}
+
+//
+// .content
+//
 @media (min-width: 768px) {
   article.content-primary:nth-child(2n) {
     top: -3rem;
@@ -123,7 +148,6 @@ article.content a {
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
   height: 100%;
   background-color: transparent;
   z-index: 100;
@@ -161,7 +185,9 @@ article.content a ~ figure > img {
   transition: 0.2s;
 }
 
-/*SINGLE.PHP*/
+//
+// single.php
+//
 article.single ul {
   list-style-type: none;
 }
@@ -169,8 +195,9 @@ article.single ul {
 article.single img {
   max-width: 100% !important;
 }
-
-/*editing gutenburg blocks*/
+//
+// editing gutenburg blocks
+//
 .wp-block-columns,
 .wp-block-column {
   margin-bottom: 0;
@@ -197,8 +224,9 @@ div.wp-block-group {
   }
 }
 
-/*FOOTER*/
-
+//
+// FOOTER
+//
 footer {
   min-height: 80vh;
   z-index: 5;
@@ -268,49 +296,7 @@ a.navbar-brand > .header-logo {
 }
 
 a.nav-link {
-  text-decoration: none;
   position: relative;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-}
-
-a.nav-link:after {
-  position: absolute;
-  content: "";
-  height: 2px;
-  bottom: 0;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  width: 0%;
-  background: $blue;
-
-  /* optional animation */
-  -o-transition: 0.2s;
-  -ms-transition: 0.2s;
-  -moz-transition: 0.2s;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-/* optional hover classes used with anmiation */
-a.nav-link:hover:after {
-  color: $blue-dark;
-  background: $blue-dark;
-  width: 40%;
-}
-
-li.current-menu-item a:after {
-  width: 10%;
-}
-
-.nav-item-contact a {
-  outline: 4px solid $blue;
-}
-li.nav-item-contact a:after {
-  width: 0% !important;
-}
-li.nav-item-contact a:hover:after {
-  width: 0% !important;
 }
 
 /*navbar-toggler*/
@@ -318,16 +304,12 @@ li.nav-item-contact a:hover:after {
 .navbar-toggler {
   border: none;
   background: transparent !important;
-  color: $blue;
+  color: $white;
 }
 
 .navbar-toggler:focus {
   outline: none;
   background: transparent !important;
-}
-
-.blue-bar {
-  background-color: $blue;
 }
 
 .navbar-toggler .icon-bar {
