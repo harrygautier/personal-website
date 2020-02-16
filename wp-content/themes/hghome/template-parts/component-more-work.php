@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-12 col-md-1"></div>
 		<div class="col-12 col-md-8 my-4 mx-4">
-			<h2 class="mb-0">More Selected Work</h2>
+			<h2 class="mb-0">Selected Work</h2>
 			<p class="text-bold">Suggested</p>
 		</div>
 	</div>
