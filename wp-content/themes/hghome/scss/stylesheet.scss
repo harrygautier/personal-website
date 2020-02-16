@@ -1,12 +1,16 @@
 @import "_bootstrap-4.0.0/bootstrap";
 
-@import "variables";
-@import "functions";
-@import "utilities";
+
+// Offsets col & containers padding left and right
+.mx-col {
+  right: ($grid-gutter-width / 2) !important;
+  left: ($grid-gutter-width / 2) !important;
+}
 
 .overflow-hidden {
   overflow: hidden;
 }
+
 
 /* GENERAL */
 * {
@@ -41,7 +45,7 @@ main:after {
   height: 120vw;
   min-height: 800px;
   border-radius: 100%;
-  background-color: $grey-3;
+  background-color: $gray-300;
   z-index: -1;
 }
 
@@ -72,12 +76,12 @@ h4 {
 h5 {
   font-size: 1.4rem;
   font-weight: 700;
-  color: $grey-2;
+  color: $gray-200;
 }
 
 h6 {
   font-size: 0.8rem;
-  color: $grey-2;
+  color: $gray-200;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -94,7 +98,7 @@ a {
 
 a:hover,
 a:active {
-  color: $grey-2 !important;
+  color: $gray-200 !important;
 }
 
 small {
@@ -248,7 +252,7 @@ footer:after {
   -ms-transform: rotate(30deg);
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
-  background: $grey-3;
+  background: $gray-300;
   z-index: 10;
 }
 
@@ -378,4 +382,64 @@ a.nav-link {
   -webkit-transition: ease all 0.2s;
   -o-transition: ease all 0.2s;
   transition: ease all 0.2s;
+}
+
+
+
+
+
+
+
+.animate {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: ease all 0.2s;
+  -o-transition: ease all 0.2s;
+  transition: ease all 0.2s;
+}
+
+.animate-up:hover {
+  -webkit-transform: translateY(-0.25rem);
+  -ms-transform: translateY(-0.25rem);
+  -o-transform: translateY(-0.25rem);
+  transform: translateY(-0.25rem);
+  -webkit-transition: ease all 0.2s;
+  -o-transition: ease all 0.2s;
+  transition: ease all 0.2s;
+}
+
+.animate-right:hover,
+.animate-left:hover {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transform: translateY(-0.25rem);
+  -ms-transform: translateY(-0.25rem);
+  -o-transform: translateY(-0.25rem);
+  transform: translateY(-0.25rem);
+}
+
+@media (min-width: 992px) {
+  .animate-left:hover {
+    -webkit-transform: translateX(-0.25rem);
+    -ms-transform: translateX(-0.25rem);
+    -o-transform: translateX(-0.25rem);
+    transform: translateX(-0.25rem);
+    -webkit-transition: ease all 0.2s;
+    -o-transition: ease all 0.2s;
+    transition: ease all 0.2s;
+  }
+
+  .animate-right:hover {
+    -webkit-transform: translateX(0.25rem);
+    -ms-transform: translateX(0.25rem);
+    -o-transform: translateX(0.25rem);
+    transform: translateX(0.25rem);
+    -webkit-transition: ease all 0.2s;
+    -o-transition: ease all 0.2s;
+    transition: ease all 0.2s;
+  }
 }
