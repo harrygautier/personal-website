@@ -1,7 +1,7 @@
 <!--For the larger thumbnails on homepage and work page-->
-<article class="col-12 col-lg-4 content content-secondary p-relative mx-auto">
+<article class="content content-secondary col-12 col-lg-4 p-relative mx-auto">
 
-	<a href="<?php the_permalink(); ?>" class="p-absolute"></a>
+	<a href="<?php the_permalink(); ?>" class="p-absolute mx-col"></a>
 
 	<figure class="p-relative overflow-hidden p-0 px-xl-4">
 		<img src="<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url(); }?>" class="p-absolute">

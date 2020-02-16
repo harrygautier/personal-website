@@ -1,5 +1,26 @@
-<section class="skills py-4 my-4 bg-dark text-white">
-	<div class="intro my-4 row justify-content-center mx-auto">
+<section id="cv" class="bg-dark text-white pt-6">
+
+	<div class="container-fluid">
+		<div class="row justify-content-center mx-auto">
+
+			<div class="col-12 col-md-10">
+				<h2 class="pb-2">CV</h2>
+				<a class="animate animate-right" href="#">PDF Download</a>
+			</div>
+
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<div class="row justify-content-center mx-auto">
 		<div class="col-12 col-lg-6">
 			<h2>My Skills</h2>
 			<p>With a background of design, I understand the necessary steps and tools to usable and communacative development. I think that the perspective I have gives me an advantage when taking on new projects. </p>
