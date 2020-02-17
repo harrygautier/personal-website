@@ -1,4 +1,6 @@
-<section id="work" class="work">
+<section class="work">
+	<div id="work" class="link-anchor"></div>
+
 	<div class="row mx-auto">
 		<?php
 
