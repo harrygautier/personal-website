@@ -9,14 +9,14 @@
   a#{$parent},
   button#{$parent} {
     @include hover-focus {
-      background-color: darken($color, 10%) !important;
+      background-color: darken($color, $link-darken-percent) !important;
     }
   }
 }
 
 @mixin bg-gradient-variant($parent, $color) {
   #{$parent} {
-    background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+    background: $color linear-gradient(180deg, mix($body-bg, $color, $link-darken-percent), $color) repeat-x !important;
   }
 }
 
@@ -29,7 +29,7 @@
   }
   a svg#{$parent} {
     @include hover-focus {
-      fill: darken($color, 10%) !important;
+      fill: darken($color, $link-darken-percent) !important;
     }
   }
 }

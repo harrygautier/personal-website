@@ -131,8 +131,10 @@ $sizes: map-merge((
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
-$body-color:                $gray-500 !default;
+$body-bg:                   $dark ;
+$body-color:                $white;
+
+$link-darken-percent:      45%;
 
 // Links
 //
@@ -140,7 +142,7 @@ $body-color:                $gray-500 !default;
 
 $link-color:                theme-color("light");
 $link-decoration:           none !default;
-$link-hover-color:          darken($link-color, 45%);
+$link-hover-color:          darken($link-color, $link-darken-percent);
 $link-hover-decoration:     underline !default;
 
 // Paragraphs

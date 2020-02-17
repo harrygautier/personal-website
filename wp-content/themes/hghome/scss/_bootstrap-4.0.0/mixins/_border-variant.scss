@@ -1,0 +1,12 @@
+// Contextual borders
+
+@mixin border-variant($parent, $color) {
+  #{$parent} {
+    border-color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      border-color: darken($color, $link-darken-percent) !important;
+    }
+  }
+}
