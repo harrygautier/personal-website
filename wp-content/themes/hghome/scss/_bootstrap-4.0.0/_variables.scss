@@ -4,11 +4,15 @@
 
 // stylelint-disable
 $white:    #fff !default;
-$gray-100: #f9f9f9;
-$gray-200: #c2c5c6;
-$gray-300: #50505a;
-$gray-400: #181819;
-$gray-500: #070707;
+$gray-100: #f6f8f8;
+$gray-200: #e4e6e6;
+$gray-300: #bec2c2;
+$gray-400: #969a9a;
+$gray-500: #6a6a6e;
+$gray-600: #48484e;
+$gray-700: #303036;
+$gray-800: #18181c;
+$gray-900: #060608;
 $black:    #000 !default;
 
 $grays: () !default;
@@ -17,7 +21,11 @@ $grays: map-merge((
   "200": $gray-200,
   "300": $gray-300,
   "400": $gray-400,
-  "500": $gray-500
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
 ), $grays);
 
 $blue:    #0066ff;
@@ -49,7 +57,7 @@ $colors: map-merge((
   "cyan":       $cyan,
   "white":      $white,
   "gray":       $gray-300,
-  "gray-dark":  $gray-400
+  "gray-dark":  $gray-600
 ), $colors);
 
 $primary:       $blue !default;
@@ -59,7 +67,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-500 !default;
+$dark:          $gray-900 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -134,7 +142,7 @@ $sizes: map-merge((
 $body-bg:                   $dark ;
 $body-color:                $white;
 
-$link-darken-percent:      45%;
+$link-darken-percent:      35%;
 
 // Links
 //
@@ -142,8 +150,8 @@ $link-darken-percent:      45%;
 
 $link-color:                theme-color("light");
 $link-decoration:           none !default;
-$link-hover-color:          darken($link-color, $link-darken-percent);
-$link-hover-decoration:     underline !default;
+$link-hover-color:          $gray-500/*darken($link-color, $link-darken-percent)*/;
+$link-hover-decoration:     none;
 
 // Paragraphs
 //
