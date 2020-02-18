@@ -1,5 +1,6 @@
 @import "_bootstrap-4.0.0/bootstrap";
 
+@import "animations";
 
 // Offsets col & containers padding left and right
 .mx-col {
@@ -11,21 +12,23 @@
   overflow: hidden;
 }
 
-
 /* this is to link to an id, so that the header doesn't block it */
-.link-anchor{
+.link-anchor {
   display: block;
   height: 120px; /*same height as header*/
   margin-top: -120px; /*same height as header*/
   visibility: hidden;
 }
 
-
 /* GENERAL */
 * {
   text-decoration: none !important;
   max-width: 100vw;
   transition: 0.2s !important;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 main {
@@ -44,7 +47,7 @@ main:after {
   height: 120vw;
   min-height: 800px;
   border-radius: 100%;
-  background-color: $gray-300;
+  background-color: $gray-800;
   z-index: -1;
 }
 
@@ -63,7 +66,7 @@ h4 {
 // muted text
 h5 {
   font-size: 1.4rem;
-  color: $gray-200;
+  color: $gray-500;
 }
 
 h6 {
@@ -169,9 +172,6 @@ article.content a ~ figure > img {
 //
 // single.php
 //
-article.single ul {
-  list-style-type: none;
-}
 
 article.single img {
   max-width: 100% !important;
@@ -229,7 +229,7 @@ footer:after {
   -ms-transform: rotate(30deg);
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
-  background: $gray-300;
+  background: $gray-800;
   z-index: 10;
 }
 
@@ -248,7 +248,6 @@ footer:after {
 /* Extra large devices (large desktops, 1200px and up) */
 // @media (min-width: 1200px) { ... }
 
-
 .header-logo {
   max-height: 40px;
 }
@@ -256,8 +255,8 @@ footer:after {
 /*navbar-toggler*/
 /*credit: https://jsfiddle.net/k1nz4L3h/185/*/
 .navbar-toggler {
-  border: none!important;
-  outline: none!important;
+  border: none !important;
+  outline: none !important;
 
   & .icon-bar {
     -webkit-transform: rotate(0deg) translate(0px, 0px);
@@ -286,7 +285,8 @@ footer:after {
     transition: ease all 0.2s;
   }
 
-  &:hover > .icon-bar:nth-child(2), &:active > .icon-bar:nth-child(2) {
+  &:hover > .icon-bar:nth-child(2),
+  &:active > .icon-bar:nth-child(2) {
     width: 22px;
     -webkit-transition: ease all 0.2s;
     -o-transition: ease all 0.2s;
@@ -315,64 +315,6 @@ footer:after {
     -ms-transform: rotate(-45deg) translate(4px, -5px);
     -o-transform: rotate(-45deg) translate(4px, -5px);
     transform: rotate(-45deg) translate(4px, -5px);
-    -webkit-transition: ease all 0.2s;
-    -o-transition: ease all 0.2s;
-    transition: ease all 0.2s;
-  }
-}
-
-
-
-
-
-.animate {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.animate-up:hover {
-  -webkit-transform: translateY(-0.25rem);
-  -ms-transform: translateY(-0.25rem);
-  -o-transform: translateY(-0.25rem);
-  transform: translateY(-0.25rem);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.animate-right:hover,
-.animate-left:hover {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transform: translateY(-0.25rem);
-  -ms-transform: translateY(-0.25rem);
-  -o-transform: translateY(-0.25rem);
-  transform: translateY(-0.25rem);
-}
-
-@media (min-width: 992px) {
-  .animate-left:hover {
-    -webkit-transform: translateX(-0.25rem);
-    -ms-transform: translateX(-0.25rem);
-    -o-transform: translateX(-0.25rem);
-    transform: translateX(-0.25rem);
-    -webkit-transition: ease all 0.2s;
-    -o-transition: ease all 0.2s;
-    transition: ease all 0.2s;
-  }
-
-  .animate-right:hover {
-    -webkit-transform: translateX(0.25rem);
-    -ms-transform: translateX(0.25rem);
-    -o-transform: translateX(0.25rem);
-    transform: translateX(0.25rem);
     -webkit-transition: ease all 0.2s;
     -o-transition: ease all 0.2s;
     transition: ease all 0.2s;

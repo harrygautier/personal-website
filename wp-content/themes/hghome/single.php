@@ -31,28 +31,37 @@ if (have_posts()) {
 			<?php
 			if ($website_link) {
 			?>
-			<div class="website-link animate animate-left text-right pr-4 mr-xl-4 mb-5">
-				<a class="border-bottom border-light pb-1" target="_blank" href="<?php echo $website_link; ?>">Visit Website</a>
-			</div>
+
 			<?php } ?>
 
 			<?php
 			//only shows brief and tags if brief exists
 			if($brief) { ?>
+			<div class="container-fluid">
+				<div class="website-link animate animate-left text-right pr-4 mx-xl-4 mb-5">
+					<a class="border-bottom border-light pb-1" target="_blank" href="<?php echo $website_link; ?>">Visit Website</a>
+				</div>
+			</div>
+
 			<div class="intro container mx-auto mb-5">
 
-				<div class="row row-md-reverse">
+				<div class="row d-flex flex-row flex-md-row-reverse justify-content-center">
 
-					<div class="col-12 col-md-3">
+					<div class="col-12 col-md-8 col-lg-6">
+						<h2 class="mb-0">Brief</h2>
+						<div class="excerpt">
+							<p> <?php	echo $brief; ?>
+							</p>
+						</div>
+					</div>
 
-						<div class="h2 text-dark">.</div>
+					<div class="col-12 col-md-4 col-lg-3">
 
-						<div class="tags">
+						<div class="tags mt-md-5 pt-3">
 							<?php
 							$posttags = get_the_tags();
 							if ($posttags) {
 								echo '<ul class="p-0 list-unstyled">';
-								echo '<p></p>';
 								foreach($posttags as $tag) {
 									echo '<li><h4>' .$tag->name. '</h4></li>';
 								}
@@ -60,14 +69,6 @@ if (have_posts()) {
 							}
 							?>
 
-						</div>
-					</div>
-
-					<div class="col-12 col-md-9">
-						<h2 class="mb-0">Brief</h2>
-						<div class="excerpt">
-							<p> <?php	echo $brief; ?>
-							</p>
 						</div>
 					</div>
 
