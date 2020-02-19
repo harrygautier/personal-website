@@ -16,11 +16,15 @@
 
 @mixin bg-gradient-variant($parent, $color) {
   #{$parent} {
-    background: $color linear-gradient(180deg, mix($body-bg, $color, $link-darken-percent), $color) repeat-x !important;
+    background: $color
+      linear-gradient(
+        180deg,
+        mix($body-bg, $color, $link-darken-percent),
+        $color
+      )
+      repeat-x !important;
   }
 }
-
-
 
 //hghome addition
 @mixin fill-svg-variant($parent, $color) {
