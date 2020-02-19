@@ -1,0 +1,90 @@
+body.animate {
+  & .animate {
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translate(0);
+    -webkit-transition: ease all 0.2s;
+    -o-transition: ease all 0.2s;
+    transition: ease all 0.2s;
+  }
+
+  & .animate-up:hover {
+    -webkit-transform: translateY(-0.25rem);
+    -ms-transform: translateY(-0.25rem);
+    -o-transform: translateY(-0.25rem);
+    transform: translateY(-0.25rem);
+    -webkit-transition: ease all 0.2s;
+    -o-transition: ease all 0.2s;
+    transition: ease all 0.2s;
+  }
+
+  & .animate-right:hover,
+  & .animate-left:hover {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transform: translateY(-0.25rem);
+    -ms-transform: translateY(-0.25rem);
+    -o-transform: translateY(-0.25rem);
+    transform: translateY(-0.25rem);
+  }
+
+  @include media-breakpoint-up(lg) {
+    & .animate-left:hover {
+      -webkit-transform: translateX(-0.25rem);
+      -ms-transform: translateX(-0.25rem);
+      -o-transform: translateX(-0.25rem);
+      transform: translateX(-0.25rem);
+      -webkit-transition: ease all 0.2s;
+      -o-transition: ease all 0.2s;
+      transition: ease all 0.2s;
+    }
+
+    & .animate-right:hover {
+      -webkit-transform: translateX(0.25rem);
+      -ms-transform: translateX(0.25rem);
+      -o-transform: translateX(0.25rem);
+      transform: translateX(0.25rem);
+      -webkit-transition: ease all 0.2s;
+      -o-transition: ease all 0.2s;
+      transition: ease all 0.2s;
+    }
+  }
+
+  & .opacity-1 {
+    opacity: 1 !important;
+  }
+
+  & .off-screen {
+    opacity: 0;
+    transition: .4s ease-out !important;
+    & > * {
+      transition: ease-out .4s !important;
+    }
+  }
+
+  & .in-view {
+    opacity: 1 !important;
+    & > * {
+      transform: translate(0) !important;
+    }
+  }
+
+  & .off-screen-top > * {
+    transform: translateY(-2rem);
+  }
+
+  & .off-screen-right > * {
+    transform: translateX(2rem);
+  }
+
+  & .off-screen-bottom > * {
+    transform: translateY(2rem);
+  }
+
+  & .off-screen-left > * {
+    transform: translateX(-2rem);
+  }
+}

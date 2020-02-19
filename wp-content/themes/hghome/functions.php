@@ -17,17 +17,18 @@ INCLUDE SCRIPTS
 ============================*/
 function hghome_script_enqueue() {
 
-	//bootstrap files || https://getbootstrap.com/
-	wp_enqueue_style('boostrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css', array(), '4.1.0', 'all');
-	//wp_enqueue_script('bootstrap-jquery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', array( 'jquery' ), '3.1.1', true);
-	wp_enqueue_script('bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js', array(), '4.1.0', true);
+	// jquery
+	wp_enqueue_script('jquery-3.2.1-js', get_template_directory_uri() . '/js/jquery-3.2.1.slim.min.js', array(), '3.2.1', true);
+
+	// bootstrap  || https://getbootstrap.com/
+	wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '4.1.0', true);
 
 	//google fonts queue || https://fonts.google.com
 	wp_enqueue_style('google-font-montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,700', array(), '5.8.1', 'all');
 
 	//my files || https://harrygautier.com
-	wp_enqueue_style('my-css', get_template_directory_uri() . '/css/stylesheet.css', array(), '1.0.0', 'all');
 	wp_enqueue_script('my-js', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
+	wp_enqueue_style('my-css', get_template_directory_uri() . '/css/stylesheet.css', array(), '1.0.0', 'all');
 
 }
 add_action('wp_enqueue_scripts', 'hghome_script_enqueue');

@@ -1,143 +1,91 @@
-$blue-dark: #00187a;
-$blue: #0066ff;
-$peach: #ffdbbf;
-$yellow: #ffd100;
+@import "_bootstrap-4.0.0/bootstrap";
+@import "animations";
+@import "scrollbar";
 
-$dark: #070707;
-$grey-3: #222226;
-$grey-2: #50505a;
-$grey-1: #e5e9ea;
-$light: #f9f9f9;
+// Offsets col & containers padding left and right
+.mx-col {
+  right: ($grid-gutter-width / 2) !important;
+  left: ($grid-gutter-width / 2) !important;
+}
 
-$white: #fff;
-$black: #000;
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* this is to link to an id, so that the header doesn't block it */
+.link-anchor {
+  display: block;
+  height: 120px; /*same height as header*/
+  margin-top: -120px; /*same height as header*/
+  visibility: hidden;
+}
 
 /* GENERAL */
 * {
   text-decoration: none !important;
-  font-family: "Montserrat", "Helvetica", sans-serif !important;
   max-width: 100vw;
   transition: 0.2s !important;
+  transition-timing-function: ease-out !important;
 }
 
 html {
-  margin: 0 !important;
-  bottom: 0 !important;
-  padding: 0 !important;
-  background-color: #fff;
+  scroll-behavior: smooth;
+  // overflow-x for animations and after elements
+  overflow-x: hidden;
 }
 
-body {
-  background-color: $white;
-}
-
-html,
-body {
-  color: $dark !important;
-}
-
-.wrapper {
-  max-width: 1200px;
-  margin: 1rem auto;
-}
-
-.body-main {
-  /* padding: 0 1rem; */
+main {
   /* counteract navbar fixed  */
   padding-top: calc(40px + 4rem) !important;
   position: relative;
-  overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .body-main {
-    /*padding: 0 4rem;*/
-    /*max-width: 1200px;*/
-  }
-}
-
-.body-main:after {
+main:after {
   position: absolute;
   content: "";
   top: -30vw;
   left: -40vw;
-  width: 80vw;
+  width: 120vw;
   min-width: 800px;
-  height: 80vw;
+  height: 120vw;
   min-height: 800px;
   border-radius: 100%;
-  background-color: $grey-1;
+  background-color: $gray-800;
   z-index: -1;
 }
 
-/*MAIN ELEMENTS*/
-/*page heading*/
-h1 {
-  color: $blue;
-  font-weight: 700;
-}
+// MAIN ELEMENTS
 
-h1.page-title {
-  padding: 3rem 1.5rem;
-}
-
-/*page sub-headings*/
-h2 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-/*article title*/
+// article title
 h3 {
   font-size: 1.6rem;
-  font-weight: bold;
 }
 
-/*sub-sub headings*/
+// sub-sub headings
 h4 {
-  font-weight: 700;
   font-size: 1rem;
 }
 
-/*muted text*/
+// muted text
 h5 {
   font-size: 1.4rem;
-  font-weight: 700;
-  color: $grey-2;
+  color: $gray-500;
 }
 
 h6 {
   font-size: 0.8rem;
-  color: $grey-2;
+  color: $gray-200;
   text-transform: uppercase;
-  font-weight: 700;
-}
-
-small {
-  display: block;
 }
 
 p,
 a {
   line-height: 1.5;
-}
-
-a,
-a:hover,
-a:active {
   text-decoration: none;
-  color: $blue;
 }
 
-a:hover,
-a:active {
-  color: $blue-dark;
-}
-
-button.btn {
-  border-radius: 500px;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+small {
+  display: block;
 }
 
 img {
@@ -148,167 +96,109 @@ img {
   max-width: 100%;
 }
 
-.btn-blue {
-  color: $white !important;
-  background-color: $blue;
+section {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
-.text-blue {
-  color: $blue !important;
-}
-
-.circle {
-  border-radius: 50% !important;
-}
-
-/*colours*/
-.light-grey {
-  background-color: $grey-1;
-}
-
-/*about section*/
-section.about {
-  width: 100%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  text-align: left;
-}
-
-@media (min-width: 1200px) {
-  section.about.container {
-    max-width: 960px;
+//
+// front-page.php
+//
+@include media-breakpoint-up(sm) {
+  h1.hero-title {
+    font-size: 4rem;
   }
-}
-
-.about-img {
-  width: 20%;
-  padding-top: 20%;
-  margin-bottom: 2rem;
-}
-
-.profile-img {
-  width: 100%;
-  height: 100%;
-  margin-top: -100%;
-  overflow: hidden;
-}
-
-.about-description {
-  margin-top: 15px;
-}
-
-.about-quote {
-  color: $grey-2;
 }
 
 .about-signature {
   max-width: 100px !important;
-  margin-top: 15px;
-  margin-bottom: 15px;
 
   /*to offset actual margin within image*/
   margin-left: -15px;
   margin-right: -15px;
 }
 
-/*content-primary.php & content-secondary.php*/
-@media (min-width: 768px) {
-  article.content-primary:nth-child(2n) {
-    top: -3rem;
+.about-image {
+  filter: grayscale(1);
+  width: 100%;
+  max-width: 300px;
+}
+
+section.cv small {
+  color: $gray-400 !important;
+}
+
+//
+// .content
+//
+article.content {
+  @include media-breakpoint-up(md) {
+    &-primary:nth-child(2n) {
+      top: -3rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &-secondary:nth-child(2n) {
+      top: -2rem;
+    }
+  }
+
+  & a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: transparent;
+    z-index: 100;
+  }
+
+  & figure > img {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  & .info {
+    padding-top: 0;
+    margin-bottom: 0.4rem;
+    transition: 0.2s;
+  }
+
+  & a:hover ~ .info {
+    padding-top: 0.4rem;
+    margin-bottom: 0;
+    transition: 0.2s;
+  }
+
+  & a ~ figure > img {
+    filter: grayscale(0.9);
+    transition: 0.2s;
+  }
+
+  & a:hover ~ figure > img {
+    filter: grayscale(0);
+    transition: 0.2s;
   }
 }
 
-article.content a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  z-index: 100;
-}
-
-article.content figure > img {
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-article.content .info {
-  max-width: 80%;
-}
-
-article.content a:hover ~ .info {
-  padding-top: 0.2rem;
-  margin-bottom: 0;
-  transition: 0.2s;
-}
-
-article.content .info {
-  padding-top: 0;
-  margin-bottom: 0.2rem;
-  transition: 0.2s;
-}
-
-article.content a:hover ~ figure > img {
-  filter: grayscale(0);
-  transition: 0.2s;
-}
-
-article.content a ~ figure > img {
-  filter: grayscale(0.9);
-  transition: 0.2s;
-}
-
-/*SERVICES*/
-section.services {
-  color: $white;
-  background-color: $dark;
-  position: relative;
-  overflow: hidden;
-  z-index: 5;
-}
-
-section.services * {
-  z-index: 15;
-}
-
-section.services:after {
-  position: absolute;
-  content: "";
-  right: 80vw;
-  top: -100vh;
-  left: -80vw;
-  bottom: -100vh;
-  border-radius: 100%;
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-  transform: rotate(30deg);
-  background: $grey-3;
-  z-index: 10;
-}
-
-/*404 page*/
-.section-404 {
-  margin-bottom: 10px;
-}
-
-/*SINGLE.PHP*/
-article.single h1 {
-  color: $dark;
-}
-
-article.single ul {
-  list-style-type: none;
-}
+//
+// single.php
+//
 
 article.single img {
   max-width: 100% !important;
 }
 
-/*editing gutenburg blocks*/
+.website-link > div {
+  right: 2rem;
+  top: -4rem;
+}
+
+//
+// editing gutenburg blocks
+//
 .wp-block-columns,
 .wp-block-column {
   margin-bottom: 0;
@@ -323,188 +213,23 @@ div.wp-block-group {
   margin-bottom: 32px;
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   div.wp-block-group {
     padding: 3rem 5rem;
   }
 }
 
-@media (min-width: 1200px) {
+@include media-breakpoint-up(xl) {
   div.wp-block-group {
     padding: 4rem 7rem;
   }
 }
 
-/*navbar*/
-nav {
-  padding: 1rem !important;
-  background: rgba(255, 255, 255, 1);
-  top: 0 !important;
-  max-width: 100%;
-
-  /*for the shadow*/
-  transition: 0.4s ease-out;
-}
-
-.shadow {
-  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2) !important;
-  transition: 0.4s ease-out;
-}
-
-a.navbar-brand {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.header-logo {
-  max-height: 40px;
-}
-
-a.navbar-brand > .header-logo {
-  border-radius: 0 !important;
-}
-
-a.nav-link {
-  text-decoration: none;
-  position: relative;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-}
-
-a.nav-link:after {
-  position: absolute;
-  content: "";
-  height: 2px;
-  bottom: 0;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  width: 0%;
-  background: $blue;
-
-  /* optional animation */
-  -o-transition: 0.2s;
-  -ms-transition: 0.2s;
-  -moz-transition: 0.2s;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-/* optional hover classes used with anmiation */
-a.nav-link:hover:after {
-  color: $blue-dark;
-  background: $blue-dark;
-  width: 40%;
-}
-
-li.current-menu-item a:after {
-  width: 10%;
-}
-
-.nav-item-contact a {
-  outline: 4px solid $blue;
-}
-li.nav-item-contact a:after {
-  width: 0% !important;
-}
-li.nav-item-contact a:hover:after {
-  width: 0% !important;
-}
-
-/*navbar-toggler*/
-/*credit: https://jsfiddle.net/k1nz4L3h/185/*/
-.navbar-toggler {
-  border: none;
-  background: transparent !important;
-  color: $blue;
-}
-
-.navbar-toggler:focus {
-  outline: none;
-  background: transparent !important;
-}
-
-.blue-bar {
-  background-color: $blue;
-}
-
-.navbar-toggler .icon-bar {
-  -webkit-transform: rotate(0deg) translate(0px, 0px);
-  -ms-transform: rotate(0deg) translate(0px, 0px);
-  -o-transform: rotate(0deg) translate(0px, 0px);
-  transform: rotate(0deg) translate(0px, 0px);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.navbar-toggler .icon-bar {
-  display: block;
-  width: 22px;
-  height: 3px;
-}
-
-.navbar-toggler .icon-bar + .icon-bar {
-  margin-top: 4px;
-}
-
-.icon-bar:nth-child(2) {
-  width: 16px;
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.navbar-toggler:hover > .icon-bar:nth-child(2) {
-  width: 22px;
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.navbar-toggler:active > .icon-bar:nth-child(2) {
-  width: 22px;
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
-  -webkit-transform: rotate(45deg) translate(5px, 5px);
-  -ms-transform: rotate(45deg) translate(5px, 5px);
-  -o-transform: rotate(45deg) translate(5px, 5px);
-  transform: rotate(45deg) translate(5px, 5px);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
-  opacity: 0;
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-.navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
-  -webkit-transform: rotate(-45deg) translate(4px, -5px);
-  -ms-transform: rotate(-45deg) translate(4px, -5px);
-  -o-transform: rotate(-45deg) translate(4px, -5px);
-  transform: rotate(-45deg) translate(4px, -5px);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
-}
-
-/*FOOTER*/
-
+//
+// FOOTER
+//
 footer {
-  color: $white !important;
-  background-color: $dark;
-
   min-height: 80vh;
-
-  position: relative;
-  overflow: hidden;
   z-index: 5;
 }
 
@@ -524,24 +249,8 @@ footer:after {
   -ms-transform: rotate(30deg);
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
-  background: $grey-3;
+  background: $gray-800;
   z-index: 10;
-}
-
-.footer-contents a,
-.footer-contents a:hover,
-.footer-contents a:active {
-  color: $white !important;
-}
-
-footer .social-icons svg {
-  fill: $white;
-  margin: 0 0.5rem;
-}
-
-/*recaptcha*/
-.grecaptcha-badge {
-  visibility: hidden;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -559,55 +268,77 @@ footer .social-icons svg {
 /* Extra large devices (large desktops, 1200px and up) */
 // @media (min-width: 1200px) { ... }
 
-/*ANIMATIONS*/
-.animate {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
+.header-logo {
+  max-height: 40px;
 }
 
-.animate-up:hover {
-  -webkit-transform: translateY(-0.25rem);
-  -ms-transform: translateY(-0.25rem);
-  -o-transform: translateY(-0.25rem);
-  transform: translateY(-0.25rem);
-  -webkit-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
+/*navbar-toggler*/
+/*credit: https://jsfiddle.net/k1nz4L3h/185/*/
+nav {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.animate-right:hover,
-.animate-left:hover {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transform: translateY(-0.25rem);
-  -ms-transform: translateY(-0.25rem);
-  -o-transform: translateY(-0.25rem);
-  transform: translateY(-0.25rem);
-}
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
 
-@media (min-width: 992px) {
-  .animate-left:hover {
-    -webkit-transform: translateX(-0.25rem);
-    -ms-transform: translateX(-0.25rem);
-    -o-transform: translateX(-0.25rem);
-    transform: translateX(-0.25rem);
+  & .icon-bar {
+    -webkit-transform: rotate(0deg) translate(0px, 0px);
+    -ms-transform: rotate(0deg) translate(0px, 0px);
+    -o-transform: rotate(0deg) translate(0px, 0px);
+    transform: rotate(0deg) translate(0px, 0px);
     -webkit-transition: ease all 0.2s;
     -o-transition: ease all 0.2s;
     transition: ease all 0.2s;
   }
 
-  .animate-right:hover {
-    -webkit-transform: translateX(0.25rem);
-    -ms-transform: translateX(0.25rem);
-    -o-transform: translateX(0.25rem);
-    transform: translateX(0.25rem);
+  & .icon-bar {
+    display: block;
+    width: 22px;
+    height: 3px;
+  }
+
+  & .icon-bar + .icon-bar {
+    margin-top: 4px;
+  }
+
+  .icon-bar:nth-child(2) {
+    width: 16px;
+    -webkit-transition: ease all 0.2s;
+    -o-transition: ease all 0.2s;
+    transition: ease all 0.2s;
+  }
+
+  &:hover > .icon-bar:nth-child(2),
+  &:active > .icon-bar:nth-child(2) {
+    width: 22px;
+    -webkit-transition: ease all 0.2s;
+    -o-transition: ease all 0.2s;
+    transition: ease all 0.2s;
+  }
+
+  &:not(.collapsed) .icon-bar:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(5px, 5px);
+    -ms-transform: rotate(45deg) translate(5px, 5px);
+    -o-transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
+    -webkit-transition: ease all 0.2s;
+    -o-transition: ease all 0.2s;
+    transition: ease all 0.2s;
+  }
+
+  &:not(.collapsed) .icon-bar:nth-child(2) {
+    opacity: 0;
+    -webkit-transition: ease all 0.2s;
+    -o-transition: ease all 0.2s;
+    transition: ease all 0.2s;
+  }
+
+  &:not(.collapsed) .icon-bar:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translate(4px, -5px);
+    -ms-transform: rotate(-45deg) translate(4px, -5px);
+    -o-transform: rotate(-45deg) translate(4px, -5px);
+    transform: rotate(-45deg) translate(4px, -5px);
     -webkit-transition: ease all 0.2s;
     -o-transition: ease all 0.2s;
     transition: ease all 0.2s;

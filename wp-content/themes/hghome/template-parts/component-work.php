@@ -1,12 +1,7 @@
-<!-- work page template -->
-<?php get_header(); ?>
+<section class="work">
+	<div id="work" class="link-anchor"></div>
 
-
-
-<div class="section-work">
-	<h1 class="page-title container">My Projects</h1>
-	
-	<div class="row mx-auto mx-lg-4 px-lg-4">
+	<div class="row mx-auto">
 		<?php
 
 		$args = array(
@@ -23,17 +18,11 @@
 			while ( $arr_posts->have_posts() ) {
 				$arr_posts->the_post();
 
-				get_template_part('content', 'primary');
+				get_template_part('template-parts/posts/content', 'primary');
 			}
 		}
 
 		wp_reset_postdata();
 		?>
-		
-		<?php the_content(); ?>
-		
 	</div>
-	
-</div>
-
-<?php get_footer(); ?>
+</section>

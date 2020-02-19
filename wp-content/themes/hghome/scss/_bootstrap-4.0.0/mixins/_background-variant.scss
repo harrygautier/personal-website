@@ -1,0 +1,39 @@
+// stylelint-disable declaration-no-important
+
+// Contextual backgrounds
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent},
+  button#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, $link-darken-percent) !important;
+    }
+  }
+}
+
+@mixin bg-gradient-variant($parent, $color) {
+  #{$parent} {
+    background: $color
+      linear-gradient(
+        180deg,
+        mix($body-bg, $color, $link-darken-percent),
+        $color
+      )
+      repeat-x !important;
+  }
+}
+
+//hghome addition
+@mixin fill-svg-variant($parent, $color) {
+  #{$parent} {
+    fill: $color !important;
+  }
+  a svg#{$parent} {
+    @include hover-focus {
+      fill: darken($color, $link-darken-percent) !important;
+    }
+  }
+}

@@ -26,3 +26,4 @@ node_modules/
 .htaccess
 wp-config.php
 wp-content/themes/*/.sass-cache/
+wp-content/themes/*/scss-bootstrap/
