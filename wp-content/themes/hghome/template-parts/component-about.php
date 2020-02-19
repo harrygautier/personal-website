@@ -14,7 +14,7 @@
       </div>
       <div class="col-12 col-lg-9 flex-column off-screen off-screen-right">
         <p class="mb-4"><strong>Currently looking for a full-time position based in Manchester city.</strong></p>
-        <p>Hi, I'm Harry Gautier. I am highly creative and enthusiastic, that aims to craft websites that suit both your and your clients' needs. With a good foundation in design, I can to develop websites that not only look great, but function well. A strong eye for detail coupled with a practical approach to delivering a high-quality product that is responsive to all streams of media.</p>
+        <p>Hi, I'm Harry Gautier. I am highly creative and enthusiastic, aimimg to craft websites that suit both the clients, and their users needs. With a good foundation in design, I can to develop websites that not only look great but crucially, function well. A strong eye for detail coupled with a practical approach helps me to deliver a high-quality product that is responsive to all streams of media.</p>
         <p>Being self-taught has brought upon a wide range of skills from WordPress development to photography. I pride myself in my professionalism to work, remaining self-motivated and focused on the task at hand. Whether working with a team or independently, I apply myself to ensure that what I complete is to my highest standard.</p>
         <p class="mb-2">Please see my <a class="border-bottom border-light pb-1" href="#contact">contact information</a> below.</p>
 
