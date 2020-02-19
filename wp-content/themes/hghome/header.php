@@ -55,7 +55,7 @@
 	<body <?php body_class($page_classes); //array passes in whatever class ?>>
 		<header id="top">
 
-			<nav class="navbar fixed-top navbar-expand-sm p-3 text-center bg-dark text-white">
+			<nav class="navbar fixed-top navbar-expand-sm p-3 text-center text-white">
 				<div class="container-fluid">
 
 					<a class="navbar-brand" href="<?php	if (is_front_page()) : echo '#top';	else : echo get_home_url();	endif; ?>">
