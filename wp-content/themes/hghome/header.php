@@ -99,7 +99,7 @@
 								<li class="nav-item mx-2 my-2 my-sm-0"><a href="<?php if (is_front_page()) : echo '#work';	else : echo get_home_url() . '#work';	endif; ?>" class="nav-link">Work</a></li>
 								<li class="nav-item mx-2 my-2 my-sm-0"><a href="<?php if (is_front_page()) : echo '#about';	else : echo get_home_url() . '#about';	endif; ?>" class="nav-link">About</a></li>
 								<li class="nav-item mx-2 my-2 my-sm-0"><a href="<?php if (is_front_page()) : echo '#cv';	else : echo get_home_url() . '#cv';	endif; ?>" class="nav-link">CV</a></li>
-								<li class="nav-item mx-2 my-2 my-sm-0"><a href="<?php if (is_front_page()) : echo '#contact';	else : echo get_home_url() . '#contact';	endif; ?>" class="nav-link">Contact</a></li>
+								<li class="nav-item mx-2 my-2 my-sm-0"><a href="#contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>
