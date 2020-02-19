@@ -1,6 +1,6 @@
 @import "_bootstrap-4.0.0/bootstrap";
-
 @import "animations";
+@import "scrollbar";
 
 // Offsets col & containers padding left and right
 .mx-col {
@@ -25,10 +25,13 @@
   text-decoration: none !important;
   max-width: 100vw;
   transition: 0.2s !important;
+  transition-timing-function: ease-out !important;
 }
 
 html {
   scroll-behavior: smooth;
+  // overflow-x for animations and after elements
+  overflow-x: hidden
 }
 
 main {
@@ -101,8 +104,10 @@ section {
 //
 // front-page.php
 //
-h1.hero-title {
-  font-size: 4rem;
+@include media-breakpoint-up(sm) {
+  h1.hero-title {
+    font-size: 4rem;
+  }
 }
 
 .about-signature {
@@ -115,15 +120,26 @@ h1.hero-title {
 
 .about-image {
   filter: grayscale(1);
-  transition: 0.2s;
+  width: 100%;
+  max-width: 300px;
+}
+
+section.cv small {
+  color: $gray-400 !important;
 }
 
 //
 // .content
 //
-@media (min-width: 768px) {
+@include media-breakpoint-up(md) {
   article.content-primary:nth-child(2n) {
     top: -3rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  article.content-secondary:nth-child(2n) {
+    top: -2rem;
   }
 }
 
@@ -193,13 +209,13 @@ div.wp-block-group {
   margin-bottom: 32px;
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   div.wp-block-group {
     padding: 3rem 5rem;
   }
 }
 
-@media (min-width: 1200px) {
+@include media-breakpoint-up(xl) {
   div.wp-block-group {
     padding: 4rem 7rem;
   }
@@ -254,6 +270,10 @@ footer:after {
 
 /*navbar-toggler*/
 /*credit: https://jsfiddle.net/k1nz4L3h/185/*/
+nav {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .navbar-toggler {
   border: none !important;
   outline: none !important;
