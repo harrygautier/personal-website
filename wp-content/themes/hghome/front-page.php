@@ -11,7 +11,7 @@
     -->
 
     <h1 class="text-white hero-title">Developer & Designer</h1>
-    <p class="about-description mt-3 text-light">A web developer with a strong foundation in design.</p>
+    <p class="about-description mt-3 text-light">A <span class="border-bottom border-light pb-1">web developer</span> with a strong foundation in design.</p>
 
 
   </div>
