@@ -31,7 +31,7 @@
 html {
   scroll-behavior: smooth;
   // overflow-x for animations and after elements
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 main {
@@ -131,58 +131,56 @@ section.cv small {
 //
 // .content
 //
-@include media-breakpoint-up(md) {
-  article.content-primary:nth-child(2n) {
-    top: -3rem;
+article.content {
+  @include media-breakpoint-up(md) {
+    &-primary:nth-child(2n) {
+      top: -3rem;
+    }
   }
-}
 
-@include media-breakpoint-up(lg) {
-  article.content-secondary:nth-child(2n) {
-    top: -2rem;
+  @include media-breakpoint-up(lg) {
+    &-secondary:nth-child(2n) {
+      top: -2rem;
+    }
   }
-}
 
-article.content a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background-color: transparent;
-  z-index: 100;
-}
+  & a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: transparent;
+    z-index: 100;
+  }
 
-article.content figure > img {
-  top: 0;
-  left: 0;
-  right: 0;
-}
+  & figure > img {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 
-article.content .info {
-  max-width: 80%;
-}
+  & .info {
+    padding-top: 0;
+    margin-bottom: 0.4rem;
+    transition: 0.2s;
+  }
 
-article.content a:hover ~ .info {
-  padding-top: 0.2rem;
-  margin-bottom: 0;
-  transition: 0.2s;
-}
+  & a:hover ~ .info {
+    padding-top: 0.4rem;
+    margin-bottom: 0;
+    transition: 0.2s;
+  }
 
-article.content .info {
-  padding-top: 0;
-  margin-bottom: 0.2rem;
-  transition: 0.2s;
-}
+  & a ~ figure > img {
+    filter: grayscale(0.9);
+    transition: 0.2s;
+  }
 
-article.content a:hover ~ figure > img {
-  filter: grayscale(0);
-  transition: 0.2s;
-}
-
-article.content a ~ figure > img {
-  filter: grayscale(0.9);
-  transition: 0.2s;
+  & a:hover ~ figure > img {
+    filter: grayscale(0);
+    transition: 0.2s;
+  }
 }
 
 //
@@ -192,6 +190,12 @@ article.content a ~ figure > img {
 article.single img {
   max-width: 100% !important;
 }
+
+.website-link > div {
+  right: 2rem;
+  top: -4rem;
+}
+
 //
 // editing gutenburg blocks
 //
@@ -271,7 +275,7 @@ footer:after {
 /*navbar-toggler*/
 /*credit: https://jsfiddle.net/k1nz4L3h/185/*/
 nav {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .navbar-toggler {
