@@ -4,7 +4,7 @@
 
 		<footer id="contact" class="d-flex py-4 px-2 overflow-hidden position-relative bg-dark">
 
-			<div class="container d-flex flex-column mt-4 text-light">
+			<div class="container d-flex flex-column mt-4 text-light off-screen off-screen-bottom">
 
 				<div class="d-flex flex-column flex-lg-row mb-4" id="footer-contact mt-4">
 					<div class="d-flex flex-column text-center text-lg-left pt-4">

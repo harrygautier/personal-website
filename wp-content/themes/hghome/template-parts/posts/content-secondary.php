@@ -1,5 +1,5 @@
 <!--For the larger thumbnails on homepage and work page-->
-<article class="content content-secondary col-12 col-lg-4 p-relative mx-auto">
+<article class="content content-secondary col-12 col-lg-4 p-relative mx-auto off-screen off-screen-right">
 
 	<a href="<?php the_permalink(); ?>" class="p-absolute mx-col"></a>
 

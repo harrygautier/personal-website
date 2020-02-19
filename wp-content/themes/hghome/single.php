@@ -15,7 +15,7 @@ if (have_posts()) {
 
 		<article class="container-fluid single">
 
-			<div class="container my-4 py-4 px-2">
+			<div class="container my-4 py-4 px-2 off-screen off-screen-right">
 				<h5>
 				<?php
 					if($company_name) {
@@ -25,7 +25,7 @@ if (have_posts()) {
 				<h1><?php the_title(); ?></h1>
 			</div>
 
-			<figure class="p-relative overflow-hidden p-0 px-xl-4 pt-4 m-4 mb-4">
+			<figure class="p-relative overflow-hidden p-0 px-xl-4 pt-4 m-4 mb-4 off-screen off-screen-bottom">
 				<img src="<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url(); }?>" class="position-block">
 			</figure>
 			<?php
@@ -37,7 +37,7 @@ if (have_posts()) {
 			<?php
 			//only shows brief and tags if brief exists
 			if($brief) { ?>
-			<div class="container-fluid">
+			<div class="container-fluid off-screen off-screen-left">
 				<div class="website-link animate animate-left text-right pr-4 mx-xl-4 mb-5">
 					<a class="border-bottom border-light pb-1" target="_blank" href="<?php echo $website_link; ?>">Visit Website</a>
 				</div>
